@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_13_162857) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "transferce_id", null: false
+    t.bigint "transferce_id"
     t.index ["transferce_id"], name: "index_categories_on_transferce_id"
     t.index ["user_id"], name: "index_categories_on_user_id"
   end

@@ -1,0 +1,8 @@
+<% @categries.each do |categorie| %>
+ <%= link_to  user_category_transferces_path(user_id:current_user.id,category_id:categorie.id) do %>
+  <h1><%= categorie.name %></h1>
+  <p><%= categorie.icon %></p>
+  <p>Total: $<%=total(categorie)%></p>
+  <% end %>
+<% end %>
+<%= button_to link_to "New Categorie", new_user_category_path %>

@@ -1,0 +1,13 @@
+<p>Transactions </p>
+<%=button_to link_to "Back",user_categories_path %>
+$<%= total_in_catagory(@transcation) %>
+<% @transcation.each do |transaction| %>
+  <div>
+    <div>
+      <h3><%= transaction.name %></h3>
+      <span><%= transaction.created_at %></span>
+    </div>
+    <p>$<%= transaction.amount %></p>
+  </div>
+<% end %>
+<%= button_to link_to "New Transaction", new_user_category_transferce_path %>

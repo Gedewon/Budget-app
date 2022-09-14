@@ -1,0 +1,24 @@
+<div >
+  <div>
+
+      <h2>New Transactions</h2>
+       <br>
+      <%= form_with model: @transferce,url: user_category_transferces_path(@categorie) do |f|%>
+
+        <div class="form_inputs">
+          <div>
+            <%= f.text_field :name, required: true, placeholder: "Name of New Transaction"%>
+          </div>
+          <br>
+          <div>
+            <%= f.number_field :amount, required: true, placeholder: "Price of Items"%>
+          </div>
+
+        </div>
+        <br>
+        <%= f.submit "Add New Transaction", class: "add-button"%>
+        <% end %>
+        <br>
+        <%# <%= link_to "Cancel" %> %>
+  </div>
+</div>

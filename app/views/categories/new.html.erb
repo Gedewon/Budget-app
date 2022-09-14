@@ -1,0 +1,11 @@
+<%= form_with model: @categorie , url: user_categories_path do |f| %>
+
+           <div><%= f.text_field :name, value: @categorie.name, placeholder: "Enter Category Name", required: true%> </div><br>
+
+           <div >
+               <%= f.label :icon, 'Select Icon:', class: "select_icon_label" %>
+               <%= f.select :icon, ["👔","🎵","🎉","🎁","🍼","🏠", "🐶", "🍻", "🍔"], value: @categorie.icon, required: true%>
+           </div>
+           <br>
+           <%= f.submit "Save Category", class: 'add-button'%>
+<% end %>

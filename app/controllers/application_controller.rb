@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
    flash[:notice] = "notice:  you're loggedOut!!"
    new_user_session_path
  end
-
+ def after_sign_in_path_for(_resource)
+   user_categories_path(user_id:current_user.id)
+ end
  def configure_permitted_parameters
    attributes = %i[name]
    devise_parameter_sanitizer.permit(:sign_up, keys: attributes)

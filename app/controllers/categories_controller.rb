@@ -20,11 +20,10 @@ class CategoriesController < ActionController::Base
     end
   end
 
-  def show
-  end
+  def show; end
 
   def categorie_params
-       params.require(:categorie).permit(:name, :icon)
+    params.require(:categorie).permit(:name, :icon)
   end
 
   def total(recipe)

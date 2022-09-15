@@ -1,4 +1,4 @@
-class TransfercesController < ActionController::Base
+class TransfercesController < ApplicationController
   before_action :set_categorie, only: %i[new create edit update destroy]
   def index
     @transcation = Transferce.where(user_id: current_user.id,

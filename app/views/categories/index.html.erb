@@ -1,8 +1,28 @@
-<% @categries.each do |categorie| %>
- <%= link_to  user_category_transferces_path(user_id:current_user.id,category_id:categorie.id) do %>
-  <h1><%= categorie.name %></h1>
-  <p><%= categorie.icon %></p>
-  <p>Total: $<%=total(categorie)%></p>
-  <% end %>
-<% end %>
-<%= button_to link_to "New Categorie", new_user_category_path %>
+<section  class="column col-between">
+  <div>
+    <ul id="category_list" class="mh-110">
+    <% if @categries.empty? %>
+        <li class="card text-center">
+         <h2>There are no categories</h2>
+       </li>
+    <% else %>
+    <% @categries.each do |categorie| %>
+     <%= link_to  user_category_transferces_path(user_id:current_user.id,category_id:categorie.id) do %>
+      <li class="card">
+       <div class="row row-between">
+          <span class="row p-8">
+            <span class="p-8"><%= categorie.name %></span>
+            <span class="icon-20"><%= categorie.icon %></span>
+          </span>
+          <span class="p-8"><p>$<%=total(categorie)%></span>
+        </div>
+      </li>
+      <% end %>
+    <% end %>
+    <% end %>
+    </ul>
+  </div>
+  <div class="pv-8">
+    <%= button_to "New Categorie", new_user_category_path, method: :get, class: "btn-full bg-secondary" %>
+  </div>
+</section>

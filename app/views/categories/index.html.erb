@@ -1,5 +1,8 @@
 <section  class="column col-between">
   <div>
+    <%= render partial:'shared/navbar',
+locals: {lbutton: "menu.svg", back_path:'', title: "Categories",  rbutton: :logout} %>
+
     <ul id="category_list" class="mh-110">
     <% if @categries.empty? %>
         <li class="card text-center">
@@ -11,8 +14,8 @@
       <li class="card">
        <div class="row row-between">
           <span class="row p-8">
-            <span class="p-8"><%= categorie.name %></span>
             <span class="icon-20"><%= categorie.icon %></span>
+            <span class="p-8"><%= categorie.name %></span>
           </span>
           <span class="p-8"><p>$<%=total(categorie)%></span>
         </div>

@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categries = Categorie.includes(:transferces).all
+    @categries = Categorie.includes(:transferces).where(user_id: params[:user_id])
   end
 
   def new

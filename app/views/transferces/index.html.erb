@@ -4,9 +4,15 @@
     locals: {lbutton: "back.svg", back_path: user_categories_path, title: "Transaction",  rbutton: :logout} %>
 
      <div class="card row row-between p-16">
-        <span class="row"><span class="icon-20 bold">
-      Total: $<%= total_in_catagory(@transcation) %>
-      </span></span>
+        <span class="row">
+          <span class="icon-20">
+              <%=@categorie.icon %>
+          </span>
+          <%=@categorie.name %>
+        </span>
+          <span class="bold">
+            $<%= total_in_catagory(@transcation) %>
+         </span>
     </div>
 
     <ul id="category_list" class="mh-185">

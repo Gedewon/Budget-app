@@ -3,6 +3,7 @@ class TransfercesController < ApplicationController
   def index
     @transcation = Transferce.where(user_id: current_user.id,
                                     categorie_id: params[:category_id]).order(created_at: :desc)
+    @categorie = Categorie.find(params[:category_id])
   end
 
   def new

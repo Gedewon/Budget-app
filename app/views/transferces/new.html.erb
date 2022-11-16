@@ -1,0 +1,15 @@
+<section>
+      <%= form_with model: @transferce,class: 'form', url: user_category_transferces_path(@categorie) do |f|%>
+      <%= render partial:'shared/navbar',
+locals: {lbutton: "back.svg", back_path: :back, title: "New Transaction", form: f, button: "Save"} %>
+
+          <div class="field">
+            <%= f.text_field :name, required: true, placeholder: :name%>
+          </div>
+
+          <div class="field">
+            <%= f.number_field :amount, required: true, placeholder: :amount%>
+          </div>
+
+    <% end %>
+</section>

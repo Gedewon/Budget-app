@@ -1,0 +1,13 @@
+<section>
+<%= form_with model: @categorie ,class: 'form', url: user_categories_path do |f| %>
+<%= render partial:'shared/navbar',
+locals: {lbutton: "back.svg", back_path: :back, title: "New Category", form: f, button: "Save"} %>
+
+           <div class="field">
+             <%= f.text_field :name, value: @categorie.name, placeholder: "Enter Category Name", required: true%>
+           </div>
+           <div class="field">
+               <%= f.select :icon, ["🍻","👔","🎵","🎉","🎁","🍼","🏠", "🐶",  "🍔"], value: @categorie.icon, required: true%>
+           </div>
+<% end %>
+</section>
